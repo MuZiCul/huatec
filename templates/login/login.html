@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="../../static/CSS/Login.css" type="text/css">
+</head>
+<body>
+
+    <h1><img src="../../static/images/jslogo.png">信息化管理平台</h1>
+
+<div class="div1">
+    <div class="div2">
+        <div class="login_box">
+            <form method="post" action="/login">
+                  <p class="userlogin">用户登录</p>
+                  <label>账号：</label>
+                  <input type="text" name="username" id="username" value="{% if data %}{{ data.username.data }}{% endif %}" placeholder="UserID"><br>
+                  <label>密码：</label>
+                  <input type="password" name="password" id="password" value="{% if data %}{{ data.password.data }}{% endif %}" PLACEHOLDER="Password"><br>
+                  <button type="submit">登 录</button><br><br>
+                  <a href="{{ url_for('login.register') }}" target="_top">注册</a>
+            </form>
+        </div>
+    </div>
+</div>
+<table align="center" cellpadding="1"  rules="cols">
+    <tr>
+        <td><a href="" >&copy中兴通讯教育合作中心</a></td>
+        <td><a href="" >www.ztecoop.com</a></td>
+    </tr>
+</table>
+<script type="text/javascript">
+    {% for message in get_flashed_messages() %}
+        alert('{{ message }}')
+    {% endfor %}
+</script>
+</body>
+</html>

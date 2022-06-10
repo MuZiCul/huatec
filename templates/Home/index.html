@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../static/CSS/style.css">
+    <script type="text/javascript" src="../../static/js/jquery-1.9.1.js"></script>
+</head>
+<body>
+<div  >
+ <img src="../../static/images/jslogo.png" class="img">
+</div>
+<div class="option_box">
+    <ul class="boxul" >
+        <li>
+            <a href="{{ url_for('home.shouye')}}" target="index">
+            <img src="../../static/images/i_home.ico" style="height: 50px;width: 40px">
+            <p>首页</p></a>
+         </li>
+        <li>
+            <a href="{{ url_for('project.projecthome')}}" target="index">
+            <img src="../../static/images/i_project.ico">
+            <p>项目信息</p></a>
+        </li>
+        <li>
+            <a href="{{ url_for('jiaowu.jiaowuhome')}}"  target="index">
+            <img src="../../static/images/i_jwgl.ico">
+            <p>教务管理</p></a>
+        </li>
+        <li>
+            <a href="{{ url_for('affair.affairhome')}}"  target="index">
+            <img src="../../static/images/i_meeting.ico" style="height: 50px;width: 40px" >
+            <p>会议会务</p></a>
+        </li>
+        <li>
+            <a href="{{ url_for('administration.administrationhome')}}" target="index">
+            <img src="../../static/images/i_xz.ico">
+            <p>行政管理</p></a>
+        </li>
+        <li>
+            <a href="{{ url_for('resource.resourcehome')}}"  target="index">
+            <img src="../../static/images/i_resource.ico">
+            <p>资源管理</p></a>
+        </li>
+        <li>
+            <a href="{{ url_for('system.systemhome')}}" target="index">
+            <img src="../../static/images/i_setting.ico">
+            <p>系统管理</p></a>
+        </li>
+    </ul></div>
+
+<div class="midgexian"></div>
+<iframe name="index" style="height:551px; width: 100%"align="top"></iframe>
+</body>
+</html>

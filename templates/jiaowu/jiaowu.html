@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JiaoWu</title>
+     <link type="text/css" rel="stylesheet" href="../../static/CSS/left.css">
+</head>
+<body>
+<div style="float: left; width: 19%" class="left_column">
+    <div class="left_top"><h5>教务管理信息</h5></div>
+    <div class="left_tab">
+        <a target="jiaowu" href="{{ url_for('jiaowu.j_evaluation')}}"><p>教学评价</p></a>
+       <a target="jiaowu" href="{{ url_for('jiaowu.j_score')}}"><p>学籍成绩</p></a>
+       <a target="jiaowu" href="{{ url_for('jiaowu.j_exam')}}"><p>考试报名</p></a>
+    </div>
+</div>
+<iframe name="jiaowu" style="float:right;width:80%;height:571px;overflow:auto" align="top"></iframe>
+</body>
+</html>

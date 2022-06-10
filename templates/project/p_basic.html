@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+    <link href="../../static/CSS/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../static/js/jquery-1.9.1.js"></script>
+</head>
+<body>
+<div class="right-top"><p><span>项目基本信息</span></p></div>
+<div class="right-content" align=center>
+    <p>
+        <span>项目编号：</span>
+        <input id="basicId" type="number">
+
+        <span>项目名称：</span>
+        <input id="basicName" type="text">
+        <button onclick="basic_search()">搜索</button>
+        <button onclick="basic_add()">添加</button>
+        <button>导出</button>
+        <script type="text/javascript">
+            function basic_search() {
+                const basicId = getByid('basicId').value
+                const basicName = getByid('basicName').value
+                $.ajax({
+                    url: '/search_basic', method: 'post', data: {
+                        'basicId': basicId, 'basicName': basicName
+                    }, success: function (data) {
+                        debugger
+                        $("#pythondata").css('display', 'none')
+                        let table = ''
+                        for (let i = 0; i < Object.keys(data).length; i++) {
+                            table = table + '<tr><td>' + data[i].id + '</td><td>' + data[i].name + '</td><td>' + data[i].school + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].zip + '</td><td>' + data[i].address + '</td></tr>'
+                        }
+                        $("#table").append('<table id="pythondata" border="1"  width="900" ><tr><td>项目编号</td><td>项目名称</td><td>合作院校</td><td>联系电话</td><td>电子邮箱</td><td>邮编</td><td>地址</td></tr>' +
+                            table +
+                            '</table>')
+                    }
+                })
+            }
+
+            function basic_add() {
+                $("#pythondata").css('display', 'none')
+                const table0 = '<tr><td><input id="id"></td><td><input id="name"></td><td><input id="school"></td></tr>';
+                $("#table").append('<table id="pythondata" border="1"  width="900" ><tr><td>项目编号</td><td>项目名称</td><td>合作院校</td></tr>' +
+                    table0 +
+                    '</table>')
+                const table = '<tr><td><input id="phone"></td><td><input id="email"></td><td><input id="zip"></td><td><input id="address"></td></tr>';
+                $("#table").append('<table id="pythondata" border="1"  width="900" ><td>联系电话</td><td>电子邮箱</td><td>邮编</td><td>地址</td></tr>' +
+                    table +
+                    '</table>')
+                $("#table").append('<button onclick="add()">确认添加</button>')
+            }
+
+            function add() {
+                const id = getByid('id').value;
+                const name = getByid('name').value;
+                const school = getByid('school').value;
+                const phone = getByid('phone').value;
+                const email = getByid('email').value;
+                const zip = getByid('zip').value;
+                const address = getByid('address').value;
+                $.ajax({
+                    url: '/add_basic', method: 'post', data: {
+                        'id': id,
+                        'name': name,
+                        'school': school,
+                        'phone': phone,
+                        'email': email,
+                        'zip': zip,
+                        'address': address
+                    }, success: function (data) {
+                        alert('添加成功！请刷新页面后查看!')
+                    }
+                })
+            }
+
+            function getByid(id) {
+                return document.getElementById(id)
+            }
+        </script>
+    </p>
+    <div id="table"></div>
+    <table id="pythondata" border="1" width="900">
+        {% if data %}
+            <tr>
+                <td>项目编号</td>
+                <td>项目名称</td>
+                <td>合作院校</td>
+                <td>联系电话</td>
+                <td>电子邮箱</td>
+                <td>邮编</td>
+                <td>地址</td>
+            </tr>
+            {% for basic in data %}
+                <tr>
+                    <td>{{ basic.id }}</td>
+                    <td>{{ basic.name }}</td>
+                    <td>{{ basic.school }}</td>
+                    <td>{{ basic.phone }}</td>
+                    <td>{{ basic.email }}</td>
+                    <td>{{ basic.zip }}</td>
+                    <td>{{ basic.address }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            无数据
+        {% endif %}
+    </table>
+</div>
+</body>
+</html>

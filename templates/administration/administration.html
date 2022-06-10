@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration</title>
+    <link type="text/css" rel="stylesheet" href="../../static/CSS/left.css">
+</head>
+<body>
+<div style="float: left; width: 19%" class="left_column">
+    <div class="left_top"><h5>行政管理</h5></div>
+    <div class="left_tab">
+    <a href="{{ url_for('administration.a_entry')}}" target="administration"><p>员工入职</p></a>
+    <a href="{{ url_for('administration.a_fire')}}" target="administration">员工离职</a></div>
+</div>
+<iframe style="float:right;width:80%;height: 551px" name="administration"></iframe>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.ttable{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px 50px;
+    width: 800px;
+    height: 500px;
+}
+.right-content{
+    float: top;
+    height: 600px;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding:0;
+    border: 0;
+    overflow: auto;
+}
+.right-top {
+    background-color: #f1f1f1;
+    margin: 0;
+    padding:0;
+    border: 0;
+    height: 55px;
+}
+
+.right-top p{
+    font-size: 14px;
+    height: 45px;
+
+}
+.right-top span{
+    position: absolute;
+    top:28px;
+    left: 40px;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #d0d6e4;
+    line-height: 40px;
+    margin:0px 40px 0px 40px;
+    font-size: 15px;
+    color: #169bb7;
+    font-weight: bold;
+    border-radius: 18px 18px 0px 0px;
+}
+
+
+.option_box a{
+    color: #000;
+    text-decoration: none;
+}
+.option_box image{
+    width: 32px;
+    height: 32px;
+}
+.option_box li{
+    float: left;
+    margin-right:40px;
+    list-style-type: none;
+}
+.option_box ul{
+    float: right;
+    position: absolute;
+    top:0px;
+    button:0px;
+    margin-bottom: 0px;
+}
+.img{
+    height: 50px;
+    margin-bottom: 40px;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline;
+}
+.boxul{
+    margin-left: 250px;
+
+}
+.option_box{
+
+    width: 1000px;
+    float: right;
+    display: inline;
+}
+.midgexian{
+    background: url("../images/bg_1.png");
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    margin-bottom: 0;
+}

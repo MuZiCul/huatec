@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../static/CSS/left.css">
+</head>
+<body>
+<div class="left_column" style="float: left; width: 19%">
+    <div class="left_top">
+        <h5>个人信息</h5>
+    </div>
+    <div class="left_tab" >
+        <a href="{{ url_for('home.u_selftion')}}" target="user"> <p>个人资料</p></a>
+        <a href="{{ url_for('home.u_weekly')}}"> <p>个人周报</p></a>
+        <a href="{{ url_for('home.u_conference')}}"><p>会议记录</p></a>
+        <a href="{{ url_for('home.u_checking')}}"> <p>考勤记录</p></a>
+        <a href="{{ url_for('home.u_liuyan')}}" target="user"><p>留言</p></a>
+        <a href="{{ url_for('home.u_password')}}" target="user"><p>修改密码</p></a>
+    </div>
+</div>
+<iframe name="user" style="align:right;width:80%;height:551px;overflow:auto"></iframe>
+
+</body>
+</html>

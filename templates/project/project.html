@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../static/CSS/left.css">
+</head>
+<body>
+<div id="header" style="float: left; width: 19%" class="left_column">
+    <div class="left_top"> <h5>项目信息</h5></div>
+
+    <div id="menu" class="left_tab">
+        <a href="{{ url_for('project.p_basic')}}" target="project"><p>基本信息</p></a>
+        <a href="{{ url_for('project.p_major')}}"><p>开设专业</p></a>
+        <a href="{{ url_for('project.p_people')}}" target="project"><p>人员信息</p></a>
+        <a href="{{ url_for('project.p_student')}}" target="project"><p>学生信息</p></a>
+        <a href="{{ url_for('project.p_training')}}" target="project"><p>实训平台</p></a>
+        <a href="{{ url_for('project.p_asset')}}" target="project"><p>固定资产</p></a>
+        <a href="{{ url_for('project.p_information')}}" target="project"><p>认证信息</p></a>
+    </div>
+</div>
+<div id="content" style="width:80%;float: right">
+    <iframe name="project" style="align:right;width:100%;height:551px;overflow:auto"></iframe>
+</div>
+
+</body>
+</html>

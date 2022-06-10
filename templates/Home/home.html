@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <script type="text/javascript" src="../../static/js/jquery-1.9.1.js"></script>
+</head>
+<body>
+<div style="float:left;background-color: #e1e7f5;width: 25%;height:800px" align="center">
+    <a href="{{ url_for('home.user') }}" target="user"><img src="../../static/images/touxiang.png" alt="">
+        <br>
+        运营管理部
+        <br>
+    </a>
+    {% if user %}
+        <strong>欢迎{{ user.username }}进入SOA办公平台</strong><br><br>
+    {% else %}
+        <strong>未登录</strong><br><br>
+    {% endif %}
+    <script type="text/javascript">
+        var t = new Date();
+        var year = t.getFullYear();
+        var month = t.getMonth();
+        var day = t.getDay();
+        var hour = t.getHours();
+        var min = t.getMinutes();
+        var sec = t.getSeconds();
+        var showtime = year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
+        document.write(showtime);
+    </script>
+    <br><br>
+<a href="{{ url_for('login.logoff') }}" style="text-decoration:none" target="_top">
+    <button>退出</button>
+    </a>
+
+    &ensp;&ensp;&ensp;
+    <a href="{{ url_for('login.logout') }}" style="text-decoration:none" target="_top">
+    <button>注销</button>
+    </a>
+</div>
+
+<iframe name="user" style="float:right;height: 800px;width:73%;overflow:auto"></iframe>
+
+</body>
+</html>
